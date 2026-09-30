@@ -1,0 +1,1171 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Inside Infrastructure — Learn the systems powering AI, cloud, and the next generation of technology.">
+  <meta name="theme-color" content="#05070b">
+  <title>Inside Infrastructure | AI & Next-Generation Infrastructure</title>
+
+  <style>
+    :root {
+      --bg: #05070b;
+      --panel: #0b1018;
+      --panel2: #0e1520;
+      --text: #f5f7fb;
+      --muted: #9ba8ba;
+      --line: rgba(255,255,255,.09);
+      --cyan: #62e6ff;
+      --blue: #648cff;
+      --purple: #9c7cff;
+      --green: #62e6a7;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(98,230,255,.10), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(156,124,255,.10), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin: auto;
+    }
+
+    /* NAV */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(5,7,11,.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      font-size: 14px;
+    }
+
+    .brand-mark {
+      width: 29px;
+      height: 29px;
+      border-radius: 9px;
+      background: linear-gradient(135deg,var(--cyan),var(--blue),var(--purple));
+      box-shadow: 0 0 28px rgba(98,230,255,.25);
+    }
+
+    .links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .links a:hover {
+      color: white;
+    }
+
+    .nav-button {
+      padding: 9px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(98,230,255,.28);
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 110px 0 90px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border: 1px solid rgba(98,230,255,.18);
+      background: rgba(98,230,255,.045);
+      color: var(--cyan);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 13px var(--cyan);
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: .98;
+      letter-spacing: -.06em;
+      max-width: 800px;
+    }
+
+    .gradient {
+      background: linear-gradient(105deg,#fff 20%,var(--cyan) 52%,var(--purple) 92%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      margin-top: 27px;
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .hero-text strong {
+      color: #e3eaf5;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      min-height: 51px;
+      padding: 0 21px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 13px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .primary {
+      color: #031017;
+      background: linear-gradient(135deg,var(--cyan),#8bcaff);
+      box-shadow: 0 15px 35px rgba(98,230,255,.14);
+    }
+
+    .secondary {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.035);
+    }
+
+    .small-note {
+      color: #687589;
+      font-size: 11px;
+      margin-top: 14px;
+    }
+
+    /* ARCHITECTURE */
+
+    .architecture {
+      min-height: 455px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(10,15,23,.82);
+      box-shadow: 0 30px 90px rgba(0,0,0,.4);
+    }
+
+    .architecture:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(98,230,255,.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(98,230,255,.04) 1px,transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(to bottom,#000,transparent);
+    }
+
+    .architecture-title {
+      position: absolute;
+      top: 24px;
+      left: 26px;
+      color: #657286;
+      font-size: 10px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .stack {
+      position: absolute;
+      inset: 70px 27px 27px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .layer {
+      position: relative;
+      min-height: 50px;
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid rgba(120,160,220,.14);
+      border-radius: 14px;
+      background: rgba(12,18,28,.91);
+      overflow: hidden;
+    }
+
+    .layer:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(var(--cyan),var(--purple));
+    }
+
+    .layer.ai {
+      background: rgba(39,27,62,.38);
+      border-color: rgba(156,124,255,.25);
+    }
+
+    .layer-name {
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .layer-tech {
+      color: #69778a;
+      font-size: 10px;
+    }
+
+    /* STATS */
+
+    .stats {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.015);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+    }
+
+    .stat {
+      padding: 27px 20px;
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat-number {
+      font-size: 24px;
+      font-weight: 850;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 3px;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 105px 0;
+    }
+
+    .kicker {
+      color: var(--cyan);
+      font-size: 10px;
+      font-weight: 850;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    h2 {
+      font-size: clamp(35px,5vw,57px);
+      line-height: 1.04;
+      letter-spacing: -.045em;
+    }
+
+    .heading {
+      max-width: 730px;
+      margin-bottom: 48px;
+    }
+
+    .heading p {
+      color: var(--muted);
+      margin-top: 17px;
+      font-size: 16px;
+    }
+
+    /* CARDS */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .card {
+      padding: 27px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(12,17,27,.74);
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(98,230,255,.055);
+      border: 1px solid rgba(98,230,255,.11);
+      color: var(--cyan);
+      font-weight: 900;
+      margin-bottom: 21px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* PATH */
+
+    .path {
+      background: rgba(255,255,255,.012);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .path-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .path-item {
+      display: grid;
+      grid-template-columns: 65px 1fr auto;
+      align-items: center;
+      gap: 20px;
+      padding: 21px 23px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: rgba(10,15,23,.65);
+    }
+
+    .number {
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .path-item h3 {
+      font-size: 16px;
+    }
+
+    .path-item p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    .tag {
+      color: #7f8da1;
+      background: rgba(255,255,255,.035);
+      border-radius: 999px;
+      padding: 6px 9px;
+      font-size: 9px;
+      letter-spacing: .08em;
+      white-space: nowrap;
+    }
+
+    /* AI */
+
+    .ai {
+      background:
+        radial-gradient(circle at 80% 50%,rgba(156,124,255,.10),transparent 35%);
+    }
+
+    .ai-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .ai-copy p {
+      color: var(--muted);
+      margin-top: 18px;
+      font-size: 16px;
+    }
+
+    .ai-list {
+      margin-top: 25px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .ai-list div {
+      display: flex;
+      gap: 11px;
+      color: #c8d2df;
+      font-size: 13px;
+    }
+
+    .check {
+      color: var(--cyan);
+      font-weight: 900;
+    }
+
+    .terminal {
+      overflow: hidden;
+      border: 1px solid rgba(156,124,255,.2);
+      border-radius: 24px;
+      background: #070a10;
+      box-shadow: 0 30px 80px rgba(0,0,0,.35);
+    }
+
+    .terminal-bar {
+      height: 42px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 14px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .terminal-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #3a4453;
+    }
+
+    .terminal-title {
+      color: #69768a;
+      font-size: 10px;
+      margin-left: 7px;
+    }
+
+    .terminal-body {
+      padding: 24px;
+      font: 12px/2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      color: #aebbd0;
+    }
+
+    .cyan {
+      color: var(--cyan);
+    }
+
+    .purple {
+      color: var(--purple);
+    }
+
+    .green {
+      color: var(--green);
+    }
+
+    /* INSTRUCTOR */
+
+    .instructor {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .profile {
+      min-height: 300px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 50% 15%,rgba(98,230,255,.10),transparent 36%),
+        var(--panel);
+    }
+
+    .profile-mark {
+      width: 96px;
+      height: 96px;
+      display: grid;
+      place-items: center;
+      margin: auto;
+      border-radius: 27px;
+      background: linear-gradient(135deg,var(--cyan),var(--blue),var(--purple));
+      color: #05070b;
+      font-size: 30px;
+      font-weight: 900;
+      box-shadow: 0 0 60px rgba(98,230,255,.17);
+    }
+
+    .profile h3 {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    .profile p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .instructor-copy > p {
+      color: var(--muted);
+      margin-top: 18px;
+      font-size: 16px;
+    }
+
+    .expertise {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 23px;
+    }
+
+    .expertise span {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #c5d0de;
+      background: rgba(255,255,255,.025);
+      font-size: 10px;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding-bottom: 115px;
+    }
+
+    .cta-box {
+      text-align: center;
+      padding: 75px 25px;
+      border: 1px solid rgba(98,230,255,.17);
+      border-radius: 31px;
+      background:
+        radial-gradient(circle at 50% 0%,rgba(98,230,255,.10),transparent 42%),
+        rgba(255,255,255,.018);
+    }
+
+    .cta-box h2 {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .cta-box p {
+      max-width: 650px;
+      margin: 18px auto 28px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: #657286;
+      font-size: 11px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width:900px) {
+      .hero-grid,
+      .ai-grid,
+      .instructor {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 75px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .links {
+        display: none;
+      }
+    }
+
+    @media (max-width:600px) {
+      .container {
+        width: min(calc(100% - 28px),var(--max));
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      h1 {
+        font-size: 50px;
+      }
+
+      .hero-text {
+        font-size: 16px;
+      }
+
+      .architecture {
+        min-height: 365px;
+      }
+
+      .stack {
+        inset: 65px 17px 20px;
+      }
+
+      .layer-tech {
+        display: none;
+      }
+
+      .path-item {
+        grid-template-columns: 43px 1fr;
+      }
+
+      .tag {
+        display: none;
+      }
+
+      .footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav">
+      <a href="#" class="brand">
+        <div class="brand-mark"></div>
+        <span>INSIDE INFRASTRUCTURE</span>
+      </a>
+
+      <div class="links">
+        <a href="#path">Curriculum</a>
+        <a href="#ai">AI Infrastructure</a>
+        <a href="#instructor">About</a>
+        <a href="#enroll" class="nav-button">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="eyebrow">
+            <span class="dot"></span>
+            AI + Next-Generation Infrastructure
+          </div>
+
+          <h1>
+            <span class="gradient">Inside Infrastructure.</span><br>
+            See what powers technology.
+          </h1>
+
+          <p class="hero-text">
+            Technology runs on systems most people never see.
+            <strong>Inside Infrastructure</strong> takes you from the fundamentals
+            to cloud, automation, Kubernetes, AI infrastructure, security,
+            SRE and platform engineering.
+          </p>
+
+          <div class="actions">
+            <a href="#enroll" class="button primary">Start Learning</a>
+            <a href="#path" class="button secondary">Explore the Curriculum</a>
+          </div>
+
+          <p class="small-note">
+            Designed for beginners. Built toward professional-level infrastructure skills.
+          </p>
+        </div>
+
+        <div class="architecture">
+          <div class="architecture-title">
+            The modern infrastructure stack
+          </div>
+
+          <div class="stack">
+
+            <div class="layer ai">
+              <span class="layer-name">AI Infrastructure</span>
+              <span class="layer-tech">GPU • AI Workloads • Distributed Systems</span>
+            </div>
+
+            <div class="layer">
+              <span class="layer-name">Platform Engineering</span>
+              <span class="layer-tech">Platforms • Developer Experience</span>
+            </div>
+
+            <div class="layer">
+              <span class="layer-name">Kubernetes & Containers</span>
+              <span class="layer-tech">Cloud Native • Orchestration</span>
+            </div>
+
+            <div class="layer">
+              <span class="layer-name">Cloud & Automation</span>
+              <span class="layer-tech">AWS • Azure • GCP • Terraform</span>
+            </div>
+
+            <div class="layer">
+              <span class="layer-name">Systems & Networking</span>
+              <span class="layer-tech">Linux • TCP/IP • DNS • Storage</span>
+            </div>
+
+            <div class="layer">
+              <span class="layer-name">The Fundamentals</span>
+              <span class="layer-tech">Computers • Internet • Data Centers</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STATS -->
+
+    <div class="stats">
+      <div class="container stats-grid">
+
+        <div class="stat">
+          <div class="stat-number">01</div>
+          <div class="stat-label">Start from the fundamentals</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">AI</div>
+          <div class="stat-label">Understand modern AI infrastructure</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">Build skills that scale</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-number">HANDS-ON</div>
+          <div class="stat-label">Learn by building and solving</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- WHY INFRASTRUCTURE -->
+
+    <section>
+      <div class="container">
+
+        <div class="heading">
+          <div class="kicker">Why infrastructure?</div>
+
+          <h2>AI doesn't exist in a vacuum.</h2>
+
+          <p>
+            Behind every AI application, cloud service, website and enterprise
+            platform is infrastructure. Learn the foundation underneath the technology.
+          </p>
+        </div>
+
+        <div class="cards">
+
+          <div class="card">
+            <div class="icon">01</div>
+            <h3>Start Without the Jargon</h3>
+            <p>
+              Begin with computers, networks, operating systems and the Internet.
+              Build understanding before moving into advanced infrastructure.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">02</div>
+            <h3>Learn the Whole System</h3>
+            <p>
+              Connect Linux, networking, cloud, containers, automation, security,
+              observability and AI instead of learning isolated tools.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">03</div>
+            <h3>Build Toward the Future</h3>
+            <p>
+              Progress toward Kubernetes, SRE, platform engineering and the
+              infrastructure required to operate modern AI workloads.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRICULUM -->
+
+    <section id="path" class="path">
+      <div class="container">
+
+        <div class="heading">
+          <div class="kicker">The learning path</div>
+
+          <h2>From first principles to next-generation infrastructure.</h2>
+
+          <p>
+            You don't need to know everything before you start.
+            The curriculum builds knowledge layer by layer.
+          </p>
+        </div>
+
+        <div class="path-list">
+
+          <div class="path-item">
+            <div class="number">01</div>
+            <div>
+              <h3>Technology Foundations</h3>
+              <p>Computers, operating systems, Internet, data centers and how technology connects.</p>
+            </div>
+            <div class="tag">BEGINNER</div>
+          </div>
+
+          <div class="path-item">
+            <div class="number">02</div>
+            <div>
+              <h3>Linux & Systems</h3>
+              <p>Processes, filesystems, services, permissions, troubleshooting and system administration.</p>
+            </div>
+            <div class="tag">CORE</div>
+          </div>
+
+          <div class="path-item">
+            <div class="number">03</div>
+            <div>
+              <h3>Networking</h3>
+              <p>TCP/IP, DNS, routing, load balancing, connectivity and distributed communication.</p>
+            </div>
+            <div class="tag">CORE</div>
+          </div>
+
+          <div class="path-item">
+            <div class="number">04</div>
+            <div>
+              <h3>Cloud & Infrastructure Automation</h3>
+              <p>Cloud platforms, virtualization, Terraform, configuration management and GitOps.</p>
+            </div>
+            <div class="tag">BUILD</div>
+          </div>
+
+          <div class="path-item">
+            <div class="number">05</div>
+            <div>
+              <h3>Containers & Kubernetes</h3>
+              <p>Containerized workloads, orchestration, networking, storage and cloud-native platforms.</p>
+            </div>
+            <div class="tag">CLOUD NATIVE</div>
+          </div>
+
+          <div class="path-item">
+            <div class="number">06</div>
+            <div>
+              <h3>SRE & Observability</h3>
+              <p>Reliability, telemetry, incident response, performance and operating production systems.</p>
+            </div>
+            <div class="tag">OPERATE</div>
+          </div>
+
+          <div class="path-item">
+            <div class="number">07</div>
+            <div>
+              <h3>Security & Infrastructure Protection</h3>
+              <p>Identity, TLS, PKI, secrets, access controls, security architecture and resilience.</p>
+            </div>
+            <div class="tag">SECURE</div>
+          </div>
+
+          <div class="path-item">
+            <div class="number">08</div>
+            <div>
+              <h3>AI & Next-Generation Infrastructure</h3>
+              <p>GPU infrastructure, AI workloads, distributed systems, AI platforms and emerging architectures.</p>
+            </div>
+            <div class="tag">NEXT GEN</div>
+          </div>
+
+          <div class="path-item">
+            <div class="number">09</div>
+            <div>
+              <h3>Platform Engineering & Architecture</h3>
+              <p>Design and operate platforms that bring the infrastructure stack together.</p>
+            </div>
+            <div class="tag">ADVANCED</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- AI -->
+
+    <section id="ai" class="ai">
+      <div class="container ai-grid">
+
+        <div class="ai-copy">
+
+          <div class="kicker">The next generation</div>
+
+          <h2>AI needs infrastructure that can keep up.</h2>
+
+          <p>
+            Go beyond learning how to use AI. Understand the infrastructure
+            required to run AI systems at scale.
+          </p>
+
+          <div class="ai-list">
+
+            <div>
+              <span class="check">✓</span>
+              <span>GPU and accelerated computing concepts</span>
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              <span>AI workloads and distributed systems</span>
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              <span>Containers and orchestration for AI</span>
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              <span>Observability and performance</span>
+            </div>
+
+            <div>
+              <span class="check">✓</span>
+              <span>Building platforms for AI teams</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="terminal">
+
+          <div class="terminal-bar">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-title">infrastructure-lab</span>
+          </div>
+
+          <div class="terminal-body">
+            <div><span class="cyan">$</span> inspect platform</div>
+            <div>&nbsp;</div>
+            <div>compute ........ <span class="green">ready</span></div>
+            <div>network ........ <span class="green">connected</span></div>
+            <div>containers ..... <span class="green">running</span></div>
+            <div>kubernetes ..... <span class="green">healthy</span></div>
+            <div>telemetry ...... <span class="green">active</span></div>
+            <div>gpu ............ <span class="purple">available</span></div>
+            <div>ai workload .... <span class="purple">initializing</span></div>
+            <div>&nbsp;</div>
+            <div>
+              <span class="cyan">platform.status</span> =
+              <span class="green">operational</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="instructor">
+      <div class="container instructor">
+
+        <div class="profile">
+
+          <div>
+            <div class="profile-mark">LI</div>
+            <h3>Built from the field</h3>
+            <p>Infrastructure • SRE • Platform Engineering • AI</p>
+          </div>
+
+        </div>
+
+        <div class="instructor-copy">
+
+          <div class="kicker">Why learn here?</div>
+
+          <h2>Learn infrastructure from someone who builds it.</h2>
+
+          <p>
+            Inside Infrastructure is built around real-world platform engineering,
+            SRE, cloud, Kubernetes, automation, security and AI infrastructure—not
+            simply a collection of disconnected technology tutorials.
+          </p>
+
+          <div class="expertise">
+            <span>Kubernetes</span>
+            <span>Cloud</span>
+            <span>SRE</span>
+            <span>Platform Engineering</span>
+            <span>Linux</span>
+            <span>Terraform</span>
+            <span>GitOps</span>
+            <span>AI Infrastructure</span>
+            <span>GPU Infrastructure</span>
+            <span>Cybersecurity</span>
+            <span>Multi-Cloud</span>
+            <span>Distributed Systems</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+
+    <section id="enroll" class="cta">
+      <div class="container">
+
+        <div class="cta-box">
+
+          <div class="kicker">Start here</div>
+
+          <h2>You don't have to be a technologist to begin.</h2>
+
+          <p>
+            Start with the fundamentals. Build your understanding.
+            Then go deeper into the infrastructure powering cloud, AI
+            and the next generation of technology.
+          </p>
+
+          <!-- Replace # with your signup form URL when ready -->
+          <a href="#" class="button primary" id="signupButton">
+            Join the Early Access List
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <div>© 2026 Inside Infrastructure</div>
+      <div>AI • Cloud • Systems • Infrastructure • Platform Engineering</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("signupButton").addEventListener("click", function(e) {
+      e.preventDefault();
+      alert("The signup form is coming next. Your landing page is ready.");
+    });
+  </script>
+
+</body>
+</html>
+```
