@@ -64,5 +64,2137 @@
     }
 
     .container {
-      width: min(var(--max), calc(10
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 0.84rem;
+      letter-spacing: 0.03em;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 247, 243, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border: 2px solid var(--navy);
+      display: grid;
+      place-items: center;
+      font-family: Georgia, serif;
+      font-weight: 700;
+      background: white;
+    }
+
+    .brand span:last-child {
+      font-size: 1rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    nav a:hover {
+      color: var(--navy);
+    }
+
+    .nav-cta {
+      background: var(--navy);
+      color: white !important;
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    .hero {
+      padding: 88px 0 76px;
+      background:
+        linear-gradient(rgba(255,255,255,.84), rgba(255,255,255,.84)),
+        radial-gradient(circle at 85% 15%, rgba(40,103,168,.15), transparent 35%),
+        radial-gradient(circle at 10% 80%, rgba(184,135,47,.10), transparent 32%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--navy);
+      line-height: 1.14;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      letter-spacing: -0.055em;
+      margin: 0 0 24px;
+      max-width: 800px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.035em;
+      margin: 0 0 18px;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      margin: 0 0 10px;
+    }
+
+    .lead {
+      font-size: 1.17rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 750;
+      border: 1px solid var(--navy);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .button.primary {
+      background: var(--navy);
+      color: white;
+    }
+
+    .button.secondary {
+      background: white;
+      color: var(--navy);
+    }
+
+    .hero-note {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .program-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .program-label {
+      color: var(--blue);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-weight: 800;
+    }
+
+    .program-card h2 {
+      font-size: 2rem;
+      margin-top: 8px;
+    }
+
+    .program-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .stat {
+      padding: 15px;
+      background: var(--soft);
+      border-radius: 11px;
+      border: 1px solid var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .section {
+      padding: 86px 0;
+    }
+
+    .section.alt {
+      background: white;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 38px;
+    }
+
+    .section-kicker {
+      color: var(--blue);
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .pathway {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .pathway-item {
+      min-height: 116px;
+      padding: 17px 13px;
+      border-right: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .pathway-item:last-child {
+      border-right: 0;
+    }
+
+    .pathway-number {
+      color: var(--gold);
+      font-weight: 800;
+      font-size: .75rem;
+      margin-bottom: 8px;
+    }
+
+    .pathway-item strong {
+      font-family: Georgia, serif;
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+    }
+
+    .feature-number {
+      font-family: Georgia, serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .feature-card p,
+    .card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .weeks {
+      display: grid;
+      gap: 16px;
+    }
+
+    .week {
+      display: grid;
+      grid-template-columns: 100px 1fr 1fr;
+      gap: 25px;
+      align-items: start;
+      padding: 28px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .week-number {
+      font-family: Georgia, serif;
+      font-size: 1.7rem;
+      color: var(--gold);
+    }
+
+    .week h3 {
+      margin-bottom: 7px;
+    }
+
+    .week p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .week ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .week li {
+      margin: 4px 0;
+    }
+
+    .learning-model {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .model-step {
+      padding: 28px 20px;
+      border-right: 1px solid var(--line);
+      position: relative;
+    }
+
+    .model-step:last-child {
+      border-right: 0;
+    }
+
+    .model-step strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .model-step span {
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      border: 1px solid var(--line);
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    .project strong {
+      display: block;
+      font-family: Georgia, serif;
+      color: var(--navy);
+      font-size: 1.2rem;
+      margin-bottom: 7px;
+    }
+
+    .project span {
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .capstone {
+      background: var(--navy);
+      color: white;
+      border-radius: 22px;
+      padding: 46px;
+      display: grid;
+      grid-template-columns: 1fr .7fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .capstone h2,
+    .capstone h3 {
+      color: white;
+    }
+
+    .capstone p {
+      color: rgba(255,255,255,.76);
+      margin: 0;
+    }
+
+    .capstone-list {
+      display: grid;
+      gap: 9px;
+    }
+
+    .capstone-list div {
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.05);
+      border-radius: 8px;
+      font-size: .9rem;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .comparison-card {
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: white;
+    }
+
+    .comparison-card.emphasis {
+      border-color: var(--blue);
+      box-shadow: var(--shadow);
+    }
+
+    .comparison-card ul {
+      margin: 20px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .comparison-card li {
+      margin: 8px 0;
+    }
+
+    .credential {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .certificate {
+      background: #fff;
+      border: 8px double #c6cdd4;
+      padding: 42px;
+      text-align: center;
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .certificate .small {
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-size: .7rem;
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    .certificate h3 {
+      font-size: 2rem;
+      margin: 15px 0;
+    }
+
+    .certificate p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .credential-copy {
+      padding: 12px 0;
+    }
+
+    .credential-copy ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .enrollment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .enrollment-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 30px;
+    }
+
+    .term {
+      color: var(--blue);
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 800;
+    }
+
+    .payment-options {
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .payment {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: var(--soft);
+    }
+
+    .payment strong {
+      color: var(--navy);
+    }
+
+    .payment span {
+      color: var(--muted);
+      font-size: .88rem;
+      text-align: right;
+    }
+
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .partner {
+      padding: 22px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .partner strong {
+      color: var(--navy);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .partner span {
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .instructor {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .instructor-box {
+      background: var(--navy);
+      color: white;
+      padding: 38px;
+      border-radius: 20px;
+    }
+
+    .instructor-box .label {
+      color: #d9b76e;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 800;
+    }
+
+    .instructor-box h3 {
+      color: white;
+      font-size: 2rem;
+      margin-top: 10px;
+    }
+
+    .instructor-copy p {
+      color: var(--muted);
+    }
+
+    .expertise {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--navy);
+      border-radius: 100px;
+      padding: 7px 11px;
+      font-size: .78rem;
+      font-weight: 650;
+    }
+
+    .academy {
+      background: linear-gradient(135deg, #17365d, #244e79);
+      color: white;
+      border-radius: 24px;
+      padding: 48px;
+    }
+
+    .academy h2,
+    .academy h3 {
+      color: white;
+    }
+
+    .academy p {
+      color: rgba(255,255,255,.78);
+    }
+
+    .academy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .academy-path {
+      display: grid;
+      gap: 9px;
+    }
+
+    .academy-path div {
+      padding: 13px 15px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 9px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 11px;
+    }
+
+    details {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 750;
+      color: var(--navy);
+    }
+
+    details p {
+      color: var(--muted);
+      margin: 14px 0 2px;
+    }
+
+    .final-cta {
+      background: white;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 85px 0;
+      text-align: center;
+    }
+
+    .final-cta p {
+      max-width: 680px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .disclaimer {
+      color: var(--muted);
+      font-size: .8rem;
+      max-width: 850px;
+      margin: 25px auto 0;
+    }
+
+    footer {
+      background: #111925;
+      color: white;
+      padding: 42px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+    }
+
+    footer p {
+      color: rgba(255,255,255,.62);
+      margin: 7px 0 0;
+      font-size: .88rem;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      font-size: .88rem;
+      margin-left: 18px;
+    }
+
+    @media (max-width: 950px) {
+      .hero-grid,
+      .instructor,
+      .credential,
+      .capstone,
+      .academy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pathway {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .pathway-item:nth-child(4) {
+        border-right: 0;
+      }
+
+      .pathway-item:nth-child(-n+4) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .feature-grid,
+      .partner-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .learning-model {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .model-step:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .model-step {
+        border-bottom: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      nav a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero {
+        padding: 65px 0 55px;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      .pathway,
+      .feature-grid,
+      .project-grid,
+      .comparison,
+      .enrollment-grid,
+      .partner-grid,
+      .learning-model {
+        grid-template-columns: 1fr;
+      }
+
+      .pathway-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .pathway-item:last-child {
+        border-bottom: 0;
+      }
+
+      .week {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .week-number {
+        font-size: 1.2rem;
+      }
+
+      .capstone,
+      .academy {
+        padding: 30px 24px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer a {
+        margin: 0 15px 0 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    Professional Technology Education • AI + Infrastructure
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Inside Infrastructure home">
+        <span class="brand-mark">II</span>
+        <span>Inside Infrastructure</span>
+      </a>
+
+      <nav>
+        <a href="#program">Program</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#projects">Projects</a>
+        <a href="#enrollment">Enrollment</a>
+        <a href="#partners">Partners</a>
+        <a class="nav-cta" href="#enrollment">Explore Enrollment</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="eyebrow">Inside Infrastructure</div>
+
+          <h1>
+            Understand the technology behind everything.
+          </h1>
+
+          <p class="lead">
+            An immersive professional program designed to take learners from
+            infrastructure fundamentals through cloud, automation, Kubernetes,
+            reliability, security and AI infrastructure.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#curriculum">
+              Explore the Program
+            </a>
+
+            <a class="button secondary" href="#enrollment">
+              View Enrollment
+            </a>
+          </div>
+
+          <div class="hero-note">
+            Built around learning, practice, projects and real-world infrastructure thinking.
+          </div>
+        </div>
+
+        <aside class="program-card">
+          <div class="program-label">Professional Program</div>
+
+          <h2>AI + Infrastructure</h2>
+
+          <p>
+            Learn how modern infrastructure is built, automated, secured,
+            observed and prepared for AI workloads.
+          </p>
+
+          <div class="program-stats">
+            <div class="stat">
+              <strong>8 Weeks</strong>
+              <span>Structured program</span>
+            </div>
+
+            <div class="stat">
+              <strong>Online</strong>
+              <span>Flexible learning</span>
+            </div>
+
+            <div class="stat">
+              <strong>Hands-On</strong>
+              <span>Labs + projects</span>
+            </div>
+
+            <div class="stat">
+              <strong>Certificate</strong>
+              <span>Completion credential</span>
+            </div>
+          </div>
+
+          <a class="button primary" href="#enrollment">
+            Start With Enrollment
+          </a>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- PROGRAM -->
+    <section class="section" id="program">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-kicker">The Program</div>
+
+          <h2>
+            One learning pathway. A complete infrastructure view.
+          </h2>
+
+          <p>
+            Inside Infrastructure connects disciplines that are often taught
+            separately. Learners progressively move from foundational concepts
+            into the systems used to build modern technology platforms.
+          </p>
+        </div>
+
+        <div class="pathway">
+          <div class="pathway-item">
+            <div class="pathway-number">01</div>
+            <strong>Foundations</strong>
+          </div>
+
+          <div class="pathway-item">
+            <div class="pathway-number">02</div>
+            <strong>Systems</strong>
+          </div>
+
+          <div class="pathway-item">
+            <div class="pathway-number">03</div>
+            <strong>Networking</strong>
+          </div>
+
+          <div class="pathway-item">
+            <div class="pathway-number">04</div>
+            <strong>Cloud</strong>
+          </div>
+
+          <div class="pathway-item">
+            <div class="pathway-number">05</div>
+            <strong>Automation</strong>
+          </div>
+
+          <div class="pathway-item">
+            <div class="pathway-number">06</div>
+            <strong>Kubernetes</strong>
+          </div>
+
+          <div class="pathway-item">
+            <div class="pathway-number">07</div>
+            <strong>SRE + Security</strong>
+          </div>
+
+          <div class="pathway-item">
+            <div class="pathway-number">08</div>
+            <strong>AI Infrastructure</strong>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DIFFERENCE -->
+    <section class="section alt">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-kicker">Program Design</div>
+
+          <h2>
+            Learn the connections between technologies.
+          </h2>
+
+          <p>
+            Many technology programs concentrate on a single platform,
+            certification or tool. Inside Infrastructure is designed around
+            the relationships between systems.
+          </p>
+        </div>
+
+        <div class="comparison">
+
+          <div class="comparison-card">
+            <h3>Single-Domain Learning</h3>
+
+            <p>
+              A learner may study individual technologies independently.
+            </p>
+
+            <ul>
+              <li>Cloud</li>
+              <li>Kubernetes</li>
+              <li>Security</li>
+              <li>Automation</li>
+              <li>AI</li>
+            </ul>
+          </div>
+
+          <div class="comparison-card emphasis">
+            <h3>Inside Infrastructure</h3>
+
+            <p>
+              The program intentionally connects the disciplines into one
+              infrastructure learning path.
+            </p>
+
+            <ul>
+              <li>Foundations and systems thinking</li>
+              <li>Networking and cloud infrastructure</li>
+              <li>Automation and infrastructure as code</li>
+              <li>Kubernetes and reliability engineering</li>
+              <li>Security and infrastructure protection</li>
+              <li>AI infrastructure and accelerated computing</li>
+              <li>Platform engineering and architecture</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="disclaimer">
+          This comparison describes the intended scope and structure of Inside
+          Infrastructure. It does not claim that other educational programs
+          lack these subjects or that one educational provider is universally
+          better than another.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-kicker">How It Works</div>
+
+          <h2>
+            Learn. Practice. Build. Apply. Prove.
+          </h2>
+
+          <p>
+            The program is structured so that learners do more than consume
+            lessons. Each stage connects knowledge to practical infrastructure
+            work.
+          </p>
+        </div>
+
+        <div class="learning-model">
+
+          <div class="model-step">
+            <strong>01 · Learn</strong>
+            <span>Understand the concepts and technology.</span>
+          </div>
+
+          <div class="model-step">
+            <strong>02 · Practice</strong>
+            <span>Work through guided exercises and labs.</span>
+          </div>
+
+          <div class="model-step">
+            <strong>03 · Build</strong>
+            <span>Create working infrastructure projects.</span>
+          </div>
+
+          <div class="model-step">
+            <strong>04 · Apply</strong>
+            <span>Use the skills in realistic scenarios.</span>
+          </div>
+
+          <div class="model-step">
+            <strong>05 · Prove</strong>
+            <span>Complete assessments and the final project.</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CURRICULUM -->
+    <section class="section alt" id="curriculum">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-kicker">8-Week Curriculum</div>
+
+          <h2>
+            From infrastructure fundamentals to AI-ready architecture.
+          </h2>
+
+          <p>
+            Each week introduces a major infrastructure discipline and builds
+            toward the final architecture project.
+          </p>
+        </div>
+
+        <div class="weeks">
+
+          <article class="week">
+            <div class="week-number">Week 01</div>
+
+            <div>
+              <h3>Infrastructure Foundations</h3>
+              <p>
+                Build the mental model needed to understand modern computing
+                infrastructure.
+              </p>
+            </div>
+
+            <ul>
+              <li>Compute, storage and memory</li>
+              <li>Operating systems</li>
+              <li>Infrastructure terminology</li>
+              <li>Architecture fundamentals</li>
+              <li>First infrastructure environment</li>
+            </ul>
+          </article>
+
+          <article class="week">
+            <div class="week-number">Week 02</div>
+
+            <div>
+              <h3>Linux & Systems</h3>
+              <p>
+                Understand the operating systems that power modern infrastructure.
+              </p>
+            </div>
+
+            <ul>
+              <li>Linux fundamentals</li>
+              <li>Processes and services</li>
+              <li>Filesystems</li>
+              <li>Users and permissions</li>
+              <li>System administration</li>
+            </ul>
+          </article>
+
+          <article class="week">
+            <div class="week-number">Week 03</div>
+
+            <div>
+              <h3>Networking</h3>
+              <p>
+                Learn how systems communicate across local and distributed environments.
+              </p>
+            </div>
+
+            <ul>
+              <li>IP addressing</li>
+              <li>DNS</li>
+              <li>HTTP and HTTPS</li>
+              <li>Routing and firewalls</li>
+              <li>Load balancing</li>
+            </ul>
+          </article>
+
+          <article class="week">
+            <div class="week-number">Week 04</div>
+
+            <div>
+              <h3>Cloud & Infrastructure Automation</h3>
+              <p>
+                Move from manually managed infrastructure toward repeatable automation.
+              </p>
+            </div>
+
+            <ul>
+              <li>Cloud architecture concepts</li>
+              <li>Infrastructure as Code</li>
+              <li>Terraform concepts</li>
+              <li>Git and GitOps</li>
+              <li>Automated provisioning</li>
+            </ul>
+          </article>
+
+          <article class="week">
+            <div class="week-number">Week 05</div>
+
+            <div>
+              <h3>Containers & Kubernetes</h3>
+              <p>
+                Learn the foundation of modern containerized application platforms.
+              </p>
+            </div>
+
+            <ul>
+              <li>Containers</li>
+              <li>Docker concepts</li>
+              <li>Kubernetes architecture</li>
+              <li>Pods, deployments and services</li>
+              <li>Configuration and secrets</li>
+            </ul>
+          </article>
+
+          <article class="week">
+            <div class="week-number">Week 06</div>
+
+            <div>
+              <h3>SRE, Observability & Security</h3>
+              <p>
+                Learn how infrastructure teams make systems reliable, observable and protected.
+              </p>
+            </div>
+
+            <ul>
+              <li>Reliability engineering</li>
+              <li>Metrics, logs and traces</li>
+              <li>Monitoring and alerting</li>
+              <li>Incident response</li>
+              <li>Infrastructure security</li>
+            </ul>
+          </article>
+
+          <article class="week">
+            <div class="week-number">Week 07</div>
+
+            <div>
+              <h3>AI Infrastructure</h3>
+              <p>
+                Explore the infrastructure required to support modern AI workloads.
+              </p>
+            </div>
+
+            <ul>
+              <li>Accelerated computing</li>
+              <li>GPU infrastructure</li>
+              <li>AI workloads</li>
+              <li>Distributed systems</li>
+              <li>Model-serving concepts</li>
+            </ul>
+          </article>
+
+          <article class="week">
+            <div class="week-number">Week 08</div>
+
+            <div>
+              <h3>Platform Engineering & Architecture</h3>
+              <p>
+                Bring the disciplines together and design an infrastructure platform.
+              </p>
+            </div>
+
+            <ul>
+              <li>Platform engineering</li>
+              <li>Multi-cloud architecture</li>
+              <li>Infrastructure governance</li>
+              <li>Architecture decisions</li>
+              <li>Final capstone</li>
+            </ul>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-kicker">Hands-On Learning</div>
+
+          <h2>
+            Build systems, not just notes.
+          </h2>
+
+          <p>
+            Projects are designed to turn each major concept into something
+            learners can inspect, explain, troubleshoot and improve.
+          </p>
+        </div>
+
+        <div class="project-grid">
+
+          <div class="project">
+            <strong>Build a Linux Environment</strong>
+            <span>
+              Configure a working system and investigate its processes,
+              services, permissions and resources.
+            </span>
+          </div>
+
+          <div class="project">
+            <strong>Design Infrastructure</strong>
+            <span>
+              Translate application requirements into compute, networking,
+              storage and architecture decisions.
+            </span>
+          </div>
+
+          <div class="project">
+            <strong>Automate Infrastructure</strong>
+            <span>
+              Use Infrastructure as Code concepts to make infrastructure
+              repeatable and manageable.
+            </span>
+          </div>
+
+          <div class="project">
+            <strong>Deploy a Kubernetes Workload</strong>
+            <span>
+              Deploy and inspect a containerized workload using Kubernetes concepts.
+            </span>
+          </div>
+
+          <div class="project">
+            <strong>Observe a System</strong>
+            <span>
+              Create an observability view using metrics, logs and operational signals.
+            </span>
+          </div>
+
+          <div class="project">
+            <strong>Protect Infrastructure</strong>
+            <span>
+              Apply identity, access, network and system-security concepts.
+            </span>
+          </div>
+
+          <div class="project">
+            <strong>Design an AI Infrastructure Environment</strong>
+            <span>
+              Consider compute, GPUs, networking, storage and distributed workloads.
+            </span>
+          </div>
+
+          <div class="project">
+            <strong>Architect a Platform</strong>
+            <span>
+              Bring the program together into a scalable platform design.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CAPSTONE -->
+    <section class="section alt">
+      <div class="container">
+
+        <div class="capstone">
+
+          <div>
+            <div class="section-kicker" style="color:#d9b76e;">
+              Final Project
+            </div>
+
+            <h2>
+              The Infrastructure Capstone
+            </h2>
+
+            <p>
+              Learners bring the program together by designing and documenting
+              a complete modern infrastructure environment. The objective is
+              to demonstrate how systems, networking, cloud, automation,
+              containers, reliability, security and AI considerations fit together.
+            </p>
+          </div>
+
+          <div class="capstone-list">
+            <div>Infrastructure architecture</div>
+            <div>Network and security design</div>
+            <div>Automation strategy</div>
+            <div>Container / Kubernetes strategy</div>
+            <div>Observability plan</div>
+            <div>AI infrastructure considerations</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-kicker">What You'll Build</div>
+
+          <h2>
+            A body of practical infrastructure work.
+          </h2>
+
+          <p>
+            The program is designed to give learners tangible projects and
+            experience they can continue developing after completion.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+
+          <div class="feature-card">
+            <div class="feature-number">01</div>
+            <h3>Infrastructure Thinking</h3>
+            <p>
+              Understand how computing components work together instead of
+              treating every technology as an isolated subject.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-number">02</div>
+            <h3>Automation</h3>
+            <p>
+              Understand repeatability, Infrastructure as Code, Git workflows
+              and automated infrastructure operations.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-number">03</div>
+            <h3>Modern Platforms</h3>
+            <p>
+              Explore containers, Kubernetes, platform engineering and
+              distributed infrastructure.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-number">04</div>
+            <h3>Reliability</h3>
+            <p>
+              Apply observability, monitoring, incident response and
+              reliability concepts.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-number">05</div>
+            <h3>AI Infrastructure</h3>
+            <p>
+              Understand how accelerated computing and distributed infrastructure
+              support AI workloads.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-number">06</div>
+            <h3>Architecture</h3>
+            <p>
+              Learn to reason about infrastructure decisions at the platform
+              and architecture level.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CREDENTIAL -->
+    <section class="section alt">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-kicker">Credential</div>
+
+          <h2>
+            Complete the program. Demonstrate the work.
+          </h2>
+
+          <p>
+            Learners who satisfy the program's completion requirements can
+            receive an Inside Infrastructure Certificate of Completion.
+          </p>
+        </div>
+
+        <div class="credential">
+
+          <div class="certificate">
+            <div class="small">Inside Infrastructure</div>
+            <h3>Certificate of Completion</h3>
+            <p>
+              AI + Infrastructure Professional Program
+            </p>
+          </div>
+
+          <div class="credential-copy">
+            <h3>Program completion can include:</h3>
+
+            <ul>
+              <li>Completion of required learning modules</li>
+              <li>Hands-on lab participation</li>
+              <li>Required project work</li>
+              <li>Program assessments</li>
+              <li>Final infrastructure capstone</li>
+            </ul>
+
+            <p>
+              Credentialing, accreditation, college credit and external
+              certification recognition are not represented as established
+              unless and until formal agreements or approvals are established.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WHO IT IS FOR -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-kicker">Who It's For</div>
+
+          <h2>
+            Start where you are. Build from there.
+          </h2>
+
+          <p>
+            The program is designed to introduce infrastructure concepts
+            clearly while providing a pathway toward more advanced technical
+            work.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+
+          <div class="feature-card">
+            <div class="feature-number">A</div>
+            <h3>New to Technology</h3>
+            <p>
+              Build a structured understanding of systems, networking, cloud
+              and infrastructure before moving into advanced topics.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-number">B</div>
+            <h3>Technical Learners</h3>
+            <p>
+              Connect existing knowledge across cloud, Linux, automation,
+              Kubernetes, security and AI infrastructure.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-number">C</div>
+            <h3>Technology Professionals</h3>
+            <p>
+              Strengthen cross-domain infrastructure knowledge and develop
+              architecture-oriented thinking.
+            </p>
+          </div>
+
+        </div>
+
+        <p class="disclaimer">
+          Completion of an Inside Infrastructure program does not guarantee
+          employment, promotion, compensation changes or any specific career outcome.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- INSTRUCTOR -->
+    <section class="section alt">
+      <div class="container instructor">
+
+        <div class="instructor-box">
+          <div class="label">Instruction</div>
+
+          <h3>
+            Learn infrastructure from someone who builds it.
+          </h3>
+
+          <p>
+            The program is grounded in practical infrastructure and platform
+            engineering experience.
+          </p>
+        </div>
+
+        <div class="instructor-copy">
+          <div class="section-kicker">Technical Perspective</div>
+
+          <h2>
+            Infrastructure is more than a collection of tools.
+          </h2>
+
+          <p>
+            Inside Infrastructure approaches technology through systems
+            thinking: how compute, operating systems, networks, cloud,
+            automation, containers, security, reliability and AI workloads
+            interact.
+          </p>
+
+          <div class="expertise">
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Cloud</span>
+            <span class="tag">SRE</span>
+            <span class="tag">Platform Engineering</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">GitOps</span>
+            <span class="tag">AI Infrastructure</span>
+            <span class="tag">GPU Infrastructure</span>
+            <span class="tag">Cybersecurity</span>
+            <span class="tag">Multi-Cloud</span>
+            <span class="tag">Distributed Systems</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ENROLLMENT -->
+    <section class="section" id="enrollment">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-kicker">Enrollment</div>
+
+          <h2>
+            Choose your upcoming term.
+          </h2>
+
+          <p>
+            Enrollment windows are being developed for the upcoming program
+            cycle. Pricing and exact dates will be published when finalized.
+          </p>
+        </div>
+
+        <div class="enrollment-grid">
+
+          <div class="enrollment-card">
+            <div class="term">Winter 2026–27</div>
+
+            <h3>Inside Infrastructure</h3>
+
+            <p>
+              The first planned professional-program enrollment period.
+            </p>
+
+            <div class="payment-options">
+              <div class="payment">
+                <strong>Pay in Full</strong>
+                <span>Pricing coming soon</span>
+              </div>
+
+              <div class="payment">
+                <strong>Monthly</strong>
+                <span>Pricing coming soon</span>
+              </div>
+
+              <div class="payment">
+                <strong>Early Enrollment</strong>
+                <span>Details coming soon</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="enrollment-card">
+            <div class="term">Spring 2027</div>
+
+            <h3>Inside Infrastructure</h3>
+
+            <p>
+              A subsequent opportunity to join the professional program.
+            </p>
+
+            <div class="payment-options">
+              <div class="payment">
+                <strong>Pay in Full</strong>
+                <span>Pricing coming soon</span>
+              </div>
+
+              <div class="payment">
+                <strong>Monthly</strong>
+                <span>Pricing coming soon</span>
+              </div>
+
+              <div class="payment">
+                <strong>Early Enrollment</strong>
+                <span>Details coming soon</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align:center; margin-top:28px;">
+          <a class="button primary" href="#interest">
+            Join the Interest List
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section class="section alt" id="partners">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-kicker">Partnerships</div>
+
+          <h2>
+            Build the next generation of infrastructure talent.
+          </h2>
+
+          <p>
+            Inside Infrastructure is designed to support collaboration with
+            organizations that want to expand technology education, practical
+            learning and infrastructure workforce development.
+          </p>
+        </div>
+
+        <div class="partner-grid">
+
+          <div class="partner">
+            <strong>Technology Partnerships</strong>
+            <span>
+              Infrastructure, cloud, AI, software and technology organizations.
+            </span>
+          </div>
+
+          <div class="partner">
+            <strong>Education Partnerships</strong>
+            <span>
+              Schools, colleges, training organizations and educational programs.
+            </span>
+          </div>
+
+          <div class="partner">
+            <strong>Workforce Partnerships</strong>
+            <span>
+              Workforce development, career programs and employer initiatives.
+            </span>
+          </div>
+
+          <div class="partner">
+            <strong>Credential Partnerships</strong>
+            <span>
+              Organizations interested in formal credentialing or recognition.
+            </span>
+          </div>
+
+          <div class="partner">
+            <strong>Youth Education</strong>
+            <span>
+              Programs supporting technology learning for younger students.
+            </span>
+          </div>
+
+          <div class="partner">
+            <strong>Guest Experts</strong>
+            <span>
+              Practitioners who can bring specialized infrastructure perspectives.
+            </span>
+          </div>
+
+          <div class="partner">
+            <strong>Project Collaboration</strong>
+            <span>
+              Practical infrastructure and technology projects.
+            </span>
+          </div>
+
+          <div class="partner">
+            <strong>Community Programs</strong>
+            <span>
+              Community technology education and access initiatives.
+            </span>
+          </div>
+
+        </div>
+
+        <div style="text-align:center; margin-top:30px;">
+          <a class="button primary" href="#interest">
+            Discuss a Partnership
+          </a>
+        </div>
+
+        <p class="disclaimer">
+          Partnership, credentialing and recognition terms depend on formal
+          agreements and are not implied by this page.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- DAEMON ACADEMY -->
+    <section class="section" id="academy">
+      <div class="container">
+
+        <div class="academy">
+
+          <div class="academy-grid">
+
+            <div>
+              <div class="section-kicker" style="color:#d9b76e;">
+                Daemon Academy · Ages 11–17
+              </div>
+
+              <h2>
+                Start young. Build for the future.
+              </h2>
+
+              <p>
+                Daemon Academy is the youth education pathway associated with
+                the Inside Infrastructure ecosystem. It is intentionally
+                separate from the adult professional program and uses
+                age-appropriate technology education.
+              </p>
+
+              <a class="button secondary" href="#academy-enrollment">
+                Explore Academy Enrollment
+              </a>
+            </div>
+
+            <div class="academy-path">
+              <div>01 · Technology Foundations</div>
+              <div>02 · Internet & Networks</div>
+              <div>03 · AI & Emerging Technology</div>
+              <div>04 · Cybersecurity</div>
+              <div>05 · Build & Create</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACADEMY ENROLLMENT -->
+    <section class="section alt" id="academy-enrollment">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-kicker">Daemon Academy Enrollment</div>
+
+          <h2>
+            Technology education for ages 11–17.
+          </h2>
+
+          <p>
+            Parent and guardian enrollment information, schedules and pricing
+            will be published as the youth program is finalized.
+          </p>
+        </div>
+
+        <div class="enrollment-grid">
+
+          <div class="enrollment-card">
+            <div class="term">Winter 2026–27</div>
+
+            <h3>Daemon Academy</h3>
+
+            <p>
+              Youth technology learning pathway for ages 11–17.
+            </p>
+
+            <div class="payment-options">
+              <div class="payment">
+                <strong>Pay in Full</strong>
+                <span>Pricing coming soon</span>
+              </div>
+
+              <div class="payment">
+                <strong>Monthly</strong>
+                <span>Pricing coming soon</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="enrollment-card">
+            <div class="term">Spring 2027</div>
+
+            <h3>Daemon Academy</h3>
+
+            <p>
+              A subsequent youth enrollment opportunity.
+            </p>
+
+            <div class="payment-options">
+              <div class="payment">
+                <strong>Pay in Full</strong>
+                <span>Pricing coming soon</span>
+              </div>
+
+              <div class="payment">
+                <strong>Monthly</strong>
+                <span>Pricing coming soon</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="disclaimer">
+          Daemon Academy enrollment requires parent or legal guardian
+          participation and consent where applicable.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-kicker">Frequently Asked Questions</div>
+
+          <h2>
+            Before you enroll.
+          </h2>
+        </div>
+
+        <div class="faq">
+
+          <details>
+            <summary>Do I need previous infrastructure experience?</summary>
+            <p>
+              The program is designed to introduce foundational concepts before
+              moving into more advanced infrastructure subjects. Learners with
+              existing technical experience can use the progression to connect
+              knowledge across domains.
+            </p>
+          </details>
+
+          <details>
+            <summary>Do I need a college degree?</summary>
+            <p>
+              No degree requirement is represented by this program. Specific
+              enrollment requirements will be published when the program is
+              formally opened.
+            </p>
+          </details>
+
+          <details>
+            <summary>Do I need to know how to program?</summary>
+            <p>
+              Programming experience can be useful, but the curriculum begins
+              with infrastructure concepts rather than assuming advanced software
+              development knowledge.
+            </p>
+          </details>
+
+          <details>
+            <summary>Is the program self-paced?</summary>
+            <p>
+              The intended model combines structured online learning, practical
+              work and optional live instruction. Final delivery details will be
+              published with enrollment information.
+            </p>
+          </details>
+
+          <details>
+            <summary>Will there be hands-on labs?</summary>
+            <p>
+              Yes. Practical labs and projects are a central part of the intended
+              learning model.
+            </p>
+          </details>
+
+          <details>
+            <summary>Will I receive a certificate?</summary>
+            <p>
+              The planned credential is an Inside Infrastructure Certificate of
+              Completion for learners who satisfy the program's completion
+              requirements.
+            </p>
+          </details>
+
+          <details>
+            <summary>Is the program accredited?</summary>
+            <p>
+              Do not assume academic accreditation, college credit, government
+              approval or external industry certification from the certificate
+              of completion. Any formal recognition will be identified only after
+              the relevant agreement or approval exists.
+            </p>
+          </details>
+
+          <details>
+            <summary>What is Daemon Academy?</summary>
+            <p>
+              Daemon Academy is the separate youth technology pathway for ages
+              11–17. It is not the adult Inside Infrastructure professional program.
+            </p>
+          </details>
+
+          <details>
+            <summary>When will pricing be available?</summary>
+            <p>
+              Pricing is currently listed as coming soon. Final tuition,
+              payment schedules and enrollment deadlines should be published
+              before payment is collected.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can organizations partner with Inside Infrastructure?</summary>
+            <p>
+              Yes. The program is designed to support education, technology,
+              workforce, youth, credentialing, guest-expert and project
+              collaborations. Formal terms depend on the partnership.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INTEREST / CTA -->
+    <section class="final-cta" id="interest">
+      <div class="container">
+
+        <div class="section-kicker">Inside Infrastructure</div>
+
+        <h2>
+          Build the knowledge behind modern technology.
+        </h2>
+
+        <p>
+          Join the interest list for the next Inside Infrastructure program,
+          Daemon Academy information, or partnership opportunities.
+        </p>
+
+        <div class="hero-actions" style="justify-content:center;">
+          <a
+            class="button primary"
+            href="mailto:insideinfrastructure@example.com?subject=Inside%20Infrastructure%20Interest"
+          >
+            Join the Interest List
+          </a>
+
+          <a
+            class="button secondary"
+            href="mailto:insideinfrastructure@example.com?subject=Inside%20Infrastructure%20Partnership"
+          >
+            Partnership Inquiry
+          </a>
+        </div>
+
+        <p class="disclaimer">
+          Replace the placeholder email address above with the official
+          Inside Infrastructure contact address before publishing.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+
+      <div>
+        <strong>Inside Infrastructure</strong>
+
+        <p>
+          Technology education for the systems behind modern technology.
+        </p>
+      </div>
+
+      <div>
+        <a href="#program">Program</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#enrollment">Enrollment</a>
+        <a href="#partners">Partners</a>
+        <a href="#academy">Daemon Academy</a>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
 ```
